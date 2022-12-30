@@ -1,0 +1,325 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "CenturyGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/CenturyGothic.woff2") format("woff2"), url("../fonts/CenturyGothic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "CenturyGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/CenturyGothic-Bold.woff2") format("woff2"),
+    url("../fonts/CenturyGothic-Bold.woff") format("woff");
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html *,
+html *::before,
+html *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 375px;
+  overflow-x: hidden;
+  font-family: "CenturyGothic", sans-serif;
+  line-height: 1.78;
+  background-color: #ffffff;
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(#000000, 0.8);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input,
+textarea,
+a,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+}
+
+:focus {
+  outline-style: none;
+  outline-width: 0px !important;
+  outline-color: none !important;
+}
+
+.wrapper {
+  max-width: calc(1505px + 40px + 40px);
+  padding: 0 40px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0;
+  color: #0072bc;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  display: block;
+  padding-bottom: 40px;
+  margin-bottom: 32px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(#6dcff6, 0.6);
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(#6dcff6, 0.6);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.title-sm {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.33;
+  color: #000000;
+  margin: 0;
+  display: block;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(#000000, 0.8);
+  margin: 0;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}
+
+.hero {
+  background: linear-gradient(-125deg, #00a9e7 17.17%, #005aa4 78.33%);
+  background: linear-gradient(149deg, rgba(24,187,156,1) 0%, rgba(106,57,175,1) 42%, rgba(187,24,148,1) 72%, rgba(115,53,134,1) 100%);
+  animation: gradient 6s infinite linear;
+  background-size: 400%;
+  color: #ffffff;
+  padding: 112px 0 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    background-image: url(../img/white-wave.svg);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    z-index: 11;
+    height: 267px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__header {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 104px;
+    width: 100%;
+    height: 104px;
+    margin-right: 32px;
+    img {
+      display: block;
+      flex-shrink: 0;
+    }
+  }
+  &__phone {
+    flex-shrink: 2;
+    span {
+      margin-bottom: 7px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #ffffff;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: calc(16px + 8px);
+
+      &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-image: url(../img/icon/phone.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+      }
+    }
+    a {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.33;
+      color: #6dcff6;
+      display: block;
+      text-decoration: none;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  &__left {
+    z-index: 1;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+  &__right {
+    z-index: 0;
+    grid-column-start: 6;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+
+  .img-group {
+    position: relative;
+    height: 700px;
+    img {
+      position: absolute;
+      bottom: 0;
+      display: block;
+    }
+    &__left {
+      left: 4%;
+    }
+    &__center {
+      z-index: 2;
+      left: 25%;
+    }
+    &__right {
+      right: -26%;
+    }
+  }
+
+  .title {
+    color: inherit;
+    padding-bottom: 34px;
+    margin-bottom: 24px;
+    &::before {
+      left: auto;
+      right: 100%;
+      background-color: rgba(#ffffff, 0.3);
+    }
+    &::after {
+      background-color: rgba(#ffffff, 0.3);
+    }
+  }
+  .subtitle {
+    color: rgba(#ffffff, 0.8);
+    margin-bottom: 25px;
+  }
+
+  &__image {
+    background: #ffffff;
+    border-radius: 48px;
+    max-width: 288px;
+    width: 100%;
+    padding: 26px 24px 27px;
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+    }
+  }
+}
+
+// .gradient {
+//   height: 300px; // Тут высота блока
+//   width: 100%; // Тут длина
+//   background: linear-gradient(149deg, rgba(24,187,156,1) 0%, rgba(106,57,175,1) 42%, rgba(187,24,148,1) 72%, rgba(115,53,134,1) 100%);
+//   animation: gradient 10s infinite linear; // 10s - скорость анимации
+//   background-size: 400%; // Можно менять и подбирать интенсивность
+// }
+
+// @keyframes gradient {
+//   0% {
+//       background-position: 80% 0%;
+//   }
+//   50% {
+//       background-position: 20% 100%;
+//   }
+//   100% {
+//       background-position: 80% 0%;
+//   }
+// }
+
+@media (max-width: 1440px) {
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 425px) {
+}
+@media (max-width: 375px) {
+}
