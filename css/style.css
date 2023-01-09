@@ -385,7 +385,6 @@ button {
 }
 
 .button {
-  display: block;
   max-width: max-content;
   border-radius: 24px;
   font-weight: 700;
@@ -397,18 +396,27 @@ button {
   color: #0072bc;
   padding: 14px;
   min-height: 48px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button:hover {
+  background-color: #0072bc;
+  color: #ffffff;
 }
 .button--white {
   background-color: #ffffff;
   border: 2px solid #0072bc;
 }
 .button--ozon {
-  background-color: #005CFF;
-  color: #FFFFFF;
+  background-color: #005cff;
+  color: #ffffff;
 }
 .button--wildberries {
-  background-color: #B3109C;
-  color: #FFFFFF;
+  background-color: #b3109c;
+  color: #ffffff;
 }
 
 .catalog__item-grid:nth-child(2) .title::before {
