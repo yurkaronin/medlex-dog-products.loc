@@ -13,7 +13,7 @@ function parallax(e) {
   })
 };
 
-if(screen.width < 1024) {
+if(screen.width > 1024) {
   imgGroup.addEventListener("mousemove", parallax);
 }
 
