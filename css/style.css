@@ -280,7 +280,7 @@ button {
   gap: 32px;
   align-items: center;
   margin-bottom: 50px;
-  margin-top: -160px;
+  margin-top: -155px;
   position: relative;
   z-index: 11;
 }
@@ -324,6 +324,7 @@ button {
   display: grid;
   grid-template-columns: 64px 1fr;
   gap: 77px 24px;
+  align-items: center;
 }
 .catalog__benefits p {
   margin: 0;
@@ -336,12 +337,16 @@ button {
   padding-right: 64px;
   justify-self: end;
 }
+.catalog__details {
+  margin-top: -62px;
+}
 
 .where-buy__title {
   color: #000000;
   font-weight: 700;
   font-size: 24px;
   line-height: 1.33;
+  margin-top: 38px;
   margin-bottom: 40px;
 }
 .where-buy__list {
@@ -373,6 +378,10 @@ button {
 }
 .where-buy__image img {
   display: block;
+}
+.where-buy .button {
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .button {
@@ -421,10 +430,10 @@ button {
   padding: 190px 0 80px;
   background-color: transparent;
   background-image: url(../img/bg/pricing-purchase.svg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  margin-top: -190px;
+  margin-top: -256px;
   z-index: 11;
 }
 .pricing-purchase__list {
