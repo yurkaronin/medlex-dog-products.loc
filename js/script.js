@@ -26,12 +26,17 @@ function parallax(e) {
 //replaces word-by-word because the delimiter is " " (a space)
 // gsap.to(yourElement, {duration: 2, text: {value: "This is the new text", delimiter: " "}, ease: "none"});
 
-gsap.to('.run-text', {duration: 2, text: "Покупайте в сети магазинов Светофор", delay: 1});
+gsap.to('.run-text',
+{duration: 2,
+  text: "Покупайте в сети магазинов Светофор",
+  delay: 1
+});
+
 //GOOD:
 gsap.to('.run-text', {
   duration: 1,
   text: {
-      value: "Your new text",
+      value: "Покупайте в сети магазинов Светофор",
       newClass: "class2",
       delimiter: " "
   }

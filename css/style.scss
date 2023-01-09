@@ -136,7 +136,7 @@ button {
 
 .hero {
   background: linear-gradient(-125deg, #00a9e7 17.17%, #005aa4 78.33%);
-  background: linear-gradient(149deg, rgba(24,187,156,1) 0%, rgba(106,57,175,1) 42%, rgba(187,24,148,1) 72%, rgba(115,53,134,1) 100%);
+  // background: linear-gradient(149deg, rgba(24,187,156,1) 0%, rgba(106,57,175,1) 42%, rgba(187,24,148,1) 72%, rgba(115,53,134,1) 100%);
   animation: gradient 6s infinite linear;
   background-size: 400%;
   color: #ffffff;
@@ -293,25 +293,253 @@ button {
   }
 }
 
-// .gradient {
-//   height: 300px; // Тут высота блока
-//   width: 100%; // Тут длина
-//   background: linear-gradient(149deg, rgba(24,187,156,1) 0%, rgba(106,57,175,1) 42%, rgba(187,24,148,1) 72%, rgba(115,53,134,1) 100%);
-//   animation: gradient 10s infinite linear; // 10s - скорость анимации
-//   background-size: 400%; // Можно менять и подбирать интенсивность
-// }
+.catalog {
+  &__item-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 50px;
 
-// @keyframes gradient {
-//   0% {
-//       background-position: 80% 0%;
-//   }
-//   50% {
-//       background-position: 20% 100%;
-//   }
-//   100% {
-//       background-position: 80% 0%;
-//   }
-// }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    margin-top: -160px;
+    position: relative;
+    z-index: 11;
+  }
+
+  .subtitle {
+    margin-bottom: 22px;
+  }
+
+  &__benefits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-bottom: 48px;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(109, 207, 246, 0.6);
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(109, 207, 246, 0.6);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 77px 24px;
+    }
+
+    p {
+      margin: 0;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #000000;
+    }
+  }
+  &__photo {
+    padding-right: 64px;
+    justify-self: end;
+  }
+}
+
+.where-buy {
+  &__title {
+    color: #000000;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.33;
+    margin-bottom: 40px;
+  }
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+
+    li {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      min-height: 136px;
+
+      .button {
+        position: absolute;
+        bottom: -25px;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a7e2fa;
+    border-radius: 24px;
+    img {
+      display: block;
+    }
+  }
+}
+
+.button {
+  display: block;
+  max-width: max-content;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #0072bc;
+  padding: 14px;
+  min-height: 48px;
+
+  &--white {
+    background-color: #ffffff;
+    border: 2px solid #0072bc;
+  }
+
+  &--ozon {
+    background-color: #005CFF;
+    color: #FFFFFF;
+  }
+  &--wildberries {
+    background-color: #B3109C;
+    color: #FFFFFF;
+  }
+}
+
+.catalog__item-grid:nth-child(2) {
+  .title::before {
+    left: auto;
+    right: 100%;
+  }
+
+  .catalog__benefits::before {
+    left: auto;
+    right: 100%;
+  }
+  .catalog__photo {
+    padding-right: initial;
+    padding-left: 64px;
+    justify-self: start;
+  }
+}
+
+.pricing-purchase {
+  color: #ffffff;
+  padding: 190px 0 80px;
+  background-color: transparent;
+  background-image: url(../img/bg/pricing-purchase.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: relative;
+  margin-top: -190px;
+  z-index: 11;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 88px;
+  }
+
+  &__item {
+    background: #ffffff;
+    border: 1px solid #a7e2fa;
+    border-radius: 24px;
+    color: #000000;
+    padding: 33px;
+    padding-bottom: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
+    align-items: end;
+  }
+
+  &__details {
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+  &__photo {
+    position: relative;
+    z-index: 11;
+    margin-bottom: -1px;
+    margin-top: -88px;
+    img {
+      display: block;
+    }
+  }
+  &__name {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.78;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  &__price {
+    display: block;
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    color: #00abe6;
+  }
+  &__buttons {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 32px;
+    margin-bottom: 33px;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 1440px) {
 }

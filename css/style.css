@@ -128,7 +128,6 @@ button {
 }
 .hero {
   background: linear-gradient(-125deg, #00a9e7 17.17%, #005aa4 78.33%);
-  background: linear-gradient(149deg, rgb(24, 187, 156) 0%, rgb(106, 57, 175) 42%, rgb(187, 24, 148) 72%, rgb(115, 53, 134) 100%);
   animation: gradient 6s infinite linear;
   background-size: 400%;
   color: #ffffff;
@@ -273,4 +272,224 @@ button {
 }
 .hero__image img {
   display: block;
+}
+
+.catalog__item-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: -160px;
+  position: relative;
+  z-index: 11;
+}
+.catalog__item-grid:last-child {
+  margin-bottom: 0;
+}
+.catalog .subtitle {
+  margin-bottom: 22px;
+}
+.catalog__benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 48px;
+  position: relative;
+}
+.catalog__benefits::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(109, 207, 246, 0.6);
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+}
+.catalog__benefits::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(109, 207, 246, 0.6);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.catalog__benefits li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 77px 24px;
+}
+.catalog__benefits p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+.catalog__photo {
+  padding-right: 64px;
+  justify-self: end;
+}
+
+.where-buy__title {
+  color: #000000;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.33;
+  margin-bottom: 40px;
+}
+.where-buy__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+.where-buy__list li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 136px;
+}
+.where-buy__list li .button {
+  position: absolute;
+  bottom: -25px;
+}
+.where-buy__image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #a7e2fa;
+  border-radius: 24px;
+}
+.where-buy__image img {
+  display: block;
+}
+
+.button {
+  display: block;
+  max-width: max-content;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #0072bc;
+  padding: 14px;
+  min-height: 48px;
+}
+.button--white {
+  background-color: #ffffff;
+  border: 2px solid #0072bc;
+}
+.button--ozon {
+  background-color: #005CFF;
+  color: #FFFFFF;
+}
+.button--wildberries {
+  background-color: #B3109C;
+  color: #FFFFFF;
+}
+
+.catalog__item-grid:nth-child(2) .title::before {
+  left: auto;
+  right: 100%;
+}
+.catalog__item-grid:nth-child(2) .catalog__benefits::before {
+  left: auto;
+  right: 100%;
+}
+.catalog__item-grid:nth-child(2) .catalog__photo {
+  padding-right: initial;
+  padding-left: 64px;
+  justify-self: start;
+}
+
+.pricing-purchase {
+  color: #ffffff;
+  padding: 190px 0 80px;
+  background-color: transparent;
+  background-image: url(../img/bg/pricing-purchase.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-top: -190px;
+  z-index: 11;
+}
+.pricing-purchase__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 88px;
+}
+.pricing-purchase__item {
+  background: #ffffff;
+  border: 1px solid #a7e2fa;
+  border-radius: 24px;
+  color: #000000;
+  padding: 33px;
+  padding-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  align-items: end;
+}
+.pricing-purchase__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 40px;
+}
+.pricing-purchase__photo {
+  position: relative;
+  z-index: 11;
+  margin-bottom: -1px;
+  margin-top: -88px;
+}
+.pricing-purchase__photo img {
+  display: block;
+}
+.pricing-purchase__name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.78;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.pricing-purchase__price {
+  display: block;
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  color: #00abe6;
+}
+.pricing-purchase__buttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 32px;
+  margin-bottom: 33px;
+  align-items: center;
+}
+.pricing-purchase .button {
+  width: 100%;
+  max-width: 100%;
 }
